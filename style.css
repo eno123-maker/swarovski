@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100vh;
+	display:grid;
+	grid-template-rows: 1fr 3fr 1fr 1fr;
+	grid-template-columns: 1fr;
+	grid-template-areas:  
+	"nav"
+	" main"
+	"aside"
+	"footer";
+	background-color:#faf0f5;
+	font-family: "Montserrat", sans-serif;
+}
+nav{
+    background-color: rgba(256, 256, 256, 0.6);
+	position: fixed;
+	box-shadow: 0px 0px 20px 20px rgba(256, 256, 256, 0.6); 
+	width: 100%;
+	top:0;	
+	transition-duration: 0.5s;	
+	z-index: 1;
+	padding-bottom: 20px;
+}
+nav:hover{
+	background-color:#deadbf;
+	box-shadow: 0px 0px 0px 0px #deadbf; 
+}
+li div{
+	width: 0%;
+	height: 1.6px;
+	background-color: white;
+	border-radius:0.5px;
+}
+li:hover div{
+	animation-name: under;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes under{
+	0%{width: 0%;}
+	100%{width: 100%;}
+}
+ul{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+ul li{
+	list-style: none; 
+}
+a{
+	text-decoration: none; 
+	color: black;
+}
+#Logo img{
+	height:100px;
+}
+#Logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#Hamburger, #menu #close{
+	display: none;
+}
+#menu {
+	position: relative;
+	left: 0;
+	width: 100%;
+}
+aside{
+	grid-area: aside;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+}
+article{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.container{
+	margin: 10px;
+	width: 400px;
+}
+.imgBox img{
+	height: 300px;
+	width: 400px;
+}
+.contentBox h1{
+	font-size: 25px;
+	height: 40px;
+	box-sizing: border-box;
+	padding:5px;
+	background-color:#deadbf;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.contentBox{
+	height: 40px;
+	overflow: hidden;
+	transition-duration: 0.7s;
+}
+.contentBox:hover{
+	height: 250px;
+
+}
+.contentBox p{
+	background:#FFE6F0;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#text{
+	padding: 5px;
+	text-align: center;
+	font-size: 25px;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	box-sizing: border-box;
+}
+
+#text h1{
+	font-size: 45px;
+}
+
+main{
+	grid-area: main;
+	background-image: url(background.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+}
+
+footer{
+	width: 100%;
+	padding: 50px 10px 10px 10px;
+	box-sizing: border-box;
+	height: 100px;
+	grid-area: footer;
+	background-color:#deadbf;
+}
+@media (max-width: 768px){
+	body{
+		display: block;
+		font-size: 15px;
+		margin-top: 120px;
+	}
+	#text h1{
+		font-size: 30px;
+	}
+	#text{
+		font-size: 15px;
+		margin: 35px;
+	}
+	.container{
+		height: 300px;
+		width: 400px;
+		margin-bottom: 250px;
+	}
+	.contentBox{
+		height: 250px;
+	}
+	article{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items:center;
+	}
+	main{
+		height: 300px;
+	}
+	nav{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color:#deadbf;
+		box-shadow: 0px 0px 0px 0px;
+		padding:20px;
+		padding-left:0px;
+		box-sizing: border-box;
+		height: 120px;
+	}
+	#Hamburger{
+		color: #a52654;
+		display: unset;
+	}
+	#menu{
+		position: fixed;
+		left: -100%;
+		top:0;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	#menu:target{
+		left:0px;
+		transition: 0.3s;
+	}
+	#menu #close {
+		background-color: #deadbf;
+		padding: 20px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width:100%;
+		border-bottom: 1px solid #a52654; 
+		box-sizing: border-box;
+	}
+	#menu #close a{
+		color: #a52654;
+	}
+	#menu ul{
+		list-style: none;
+		width: 100%;
+		display: block;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	#menu  ul li{
+		width: 100%;
+		background-color: #deadbf;
+	}
+	#menu li div{
+		display: none;
+	}
+	#menu ul a {
+		display: block;
+		text-ecoration: none;
+		text-transform: uppercase;
+		padding: 15px;
+		color: #a52654;
+		box-sizing: border-box;
+	}
+	#menu #close:hover, #menu ul li a:hover{
+		background-color: #d892ad;
+	}
+	footer{
+		padding: 5px;
+		height: auto;
+		width: 100%;
+		box-sizing: border-box;	
+	}
+	footer ul{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	footer ul li{
+		padding: 10px;
+	}
+}
