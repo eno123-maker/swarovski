@@ -66,7 +66,6 @@ a{
 	width: 100%;
 }
 main{
-	
 	display: grid;
 	grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -203,7 +202,7 @@ footer{
 		}
 	header{
 		height: 300px;
-		width: 700px;
+		width: 20px;
 		background-size:contain;
 		background-position: center;
 	}
