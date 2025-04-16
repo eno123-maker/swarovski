@@ -66,6 +66,7 @@ a{
 	width: 100%;
 }
 main{
+	
 	display: grid;
 	grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -82,7 +83,6 @@ header{
 	background-size: cover;
 	height: 400px;
 	margin-bottom: 50px;
-
 }
 #img_text1,#img_text2,#img_text3,#img_text4,#img_text5,#img_text6{
 	height: 410px;
@@ -183,9 +183,9 @@ header{
 }
 footer{
 	width: 100%;
-	padding: 50px 10px 10px 10px;
-	box-sizing: border-box;
+	padding-top:50px;
 	height: 100px;
+	grid-area: footer;
 	background-color:#deadbf;
 }
 
@@ -223,70 +223,72 @@ footer{
 	color: #a52654;
 	display: unset;
 	}
-	#menu{
-		position: fixed;
-		left: -100%;
-		top:0;
-		width: 100%;
-		box-sizing: border-box;
-	}
+/*Mobile first*/
+/*Verstecken des Menüs*/
+#menu{
+	position: fixed;
+	left: -100%;
+	top:0;
+	width: 100%;
+	box-sizing: border-box;
+}
+/*Zeigen des Menüs beim Klick*/
+#menu:target{
+	left:0px;
+	transition: 0.3s;
+}
 
-	#menu:target{
-		left:0px;
-		transition: 0.3s;
-	}
-
-	#menu #close {
-		background-color: #deadbf;
-		padding: 20px;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		width:100%;
-		border-bottom: 1px solid #a52654; 
-		box-sizing: border-box;
-	}
-	#menu #close a{
-		color: #a52654;
-	}
-	#menu ul{
-		list-style: none;
-		width: 100%;
-		display: block;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	#menu  ul li{
-		width: 100%;
-		background-color: #deadbf;
-	}
-	#menu li div{
-		display: none;
-	}
-	#menu ul a {
-		display: block;
-		text-ecoration: none;
-		text-transform: uppercase;
-		padding: 15px;
-		color: #a52654;
-		box-sizing: border-box;
-	}
-	#menu #close:hover, #menu ul li a:hover{
-		background-color: #d892ad;
-	}
-	footer{
-		padding: 5px;
-		height: auto;
-		width: 100%;
-		box-sizing: border-box;
-	}
-	footer ul{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-	}
-	footer ul li{
-		padding: 10px;
-	}
+#menu #close {
+	background-color: #deadbf;
+	padding: 20px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width:100%;
+	border-bottom: 1px solid #a52654; 
+	box-sizing: border-box;
+}
+#menu #close a{
+	color: #a52654;
+}
+#menu ul{
+	list-style: none;
+	width: 100%;
+	display: block;
+	margin: 0;
+	box-sizing: border-box;
+}
+#menu  ul li{
+	width: 100%;
+	background-color: #deadbf;
+}
+#menu li div{
+	display: none;
+}
+#menu ul a {
+	display: block;
+	text-ecoration: none;
+	text-transform: uppercase;
+	padding: 15px;
+	color: #a52654;
+	box-sizing: border-box;
+}
+#menu #close:hover, #menu ul li a:hover{
+	background-color: #d892ad;
+}
+footer{
+	padding: 5px;
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
+}
+footer ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+footer ul li{
+	padding: 10px;
+}
 }
